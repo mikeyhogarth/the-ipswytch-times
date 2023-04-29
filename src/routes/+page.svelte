@@ -1,12 +1,14 @@
 <script lang="ts">
+	import type { NewsStory } from '$lib/types';
+	import type { PageData } from './$types';
 	import { HomepageSummary } from '$lib/components';
+
+	export let data: PageData;
+	const newsStories: NewsStory[] = data.stories;
 </script>
 
-<div class="grid grid-cols-3">
-	<HomepageSummary
-		headline="Donec molestie, felis ac euismod porttitor, erat
-    augue dui."
-	/>
-	<HomepageSummary headline="Aenean vitae fringilla nisi." />
-	<HomepageSummary headline="Sed metus turpis, varius sit amet faucibus in, feugiat eu tortor." />
+<div class="lg:grid lg:grid-cols-3">
+	{#each newsStories as { headline, content }}
+		<HomepageSummary {headline} {content} />
+	{/each}
 </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Header } from '$lib/components';
+	import { Header, Footer } from '$lib/components';
 	import '../app.css';
 </script>
 
@@ -9,4 +9,6 @@
 	<main class="m-auto max-w-6xl">
 		<slot />
 	</main>
+
+	<Footer />
 </div>
